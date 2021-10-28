@@ -12,7 +12,7 @@ describe('SimpleDb', () => {
 
   it('should create a file from an object and save somewhere', () => {
 
-    const someNewObject = { hu_mon: 'karl' };
+    const objectToSave = { hu_mon: 'karl' };
     const finalFile = { 
       hu_mon: 'karl',
       id: expect.any(String)
@@ -20,8 +20,8 @@ describe('SimpleDb', () => {
 
     const simpleDb = new SimpleDb(rootDir);
     return simpleDb
-      .save(someNewObject)
-      .then(() => simpleDb.get(someNewObject.id))
+      .save(objectToSave)
+      .then(() => simpleDb.get(objectToSave.id))
       .then((getReturns) => expect(getReturns).toEqual(finalFile));
   });
 });
