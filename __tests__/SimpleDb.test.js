@@ -22,6 +22,6 @@ describe('SimpleDb', () => {
     return simpleDb
       .save(objectToSave)
       .then(() => simpleDb.get(objectToSave.id))
-      .then((getReturns) => expect(getReturns).toEqual(finalFile));
+      .then((file) => expect(file).toEqual(finalFile));
   });
 });
