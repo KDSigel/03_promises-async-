@@ -26,9 +26,28 @@ describe('SimpleDb', () => {
   });
 
   it('returns an array of all the objects in the directory, deserialized from the corresponding files in the directory', () => {
-    // const expected = '';
-    // const allObjects = simpleDb.getAll(rootDir);
 
+    const objectToSave = { hu_mon: 'karl' };
+    const objectToSaveTwo = { clone: 'kar el' };
+
+    const finalFiles = [
+      { 
+        hu_mon: 'karl',
+        id: expect.any(String)
+      },
+      { 
+        clone: 'kar el',
+        id: expect.any(String)
+      }
+    ];
+
+    const simpleDb = new SimpleDb(rootDir);
+
+    return simpleDb
+      .save(objectToSave)
+      .then(() => simpleDb.save(objectToSaveTwo))
+      .then(() => simpleDb.getAll())
+      .then((file) => expect(file).toEqual(finalFiles));
 
   });
 
