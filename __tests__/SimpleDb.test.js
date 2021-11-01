@@ -24,4 +24,12 @@ describe('SimpleDb', () => {
       .then(() => simpleDb.get(objectToSave.id))
       .then((file) => expect(file).toEqual(finalFile));
   });
+
+  it('returns an array of all the objects in the directory, deserialized from the corresponding files in the directory', () => {
+    // const expected = '';
+    // const allObjects = simpleDb.getAll(rootDir);
+
+
+  });
+
 });
