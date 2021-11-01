@@ -28,15 +28,15 @@ describe('SimpleDb', () => {
   it('returns an array of all the objects in the directory, deserialized from the corresponding files in the directory', () => {
 
     const objectToSave = { hu_mon: 'karl' };
-    const objectToSaveTwo = { clone: 'kar el' };
+    const objectToSaveTwo = { hu_mon: 'kar el' };
 
     const finalFiles = [
       { 
-        hu_mon: 'karl',
+        hu_mon: expect.any(String),
         id: expect.any(String)
       },
       { 
-        clone: 'kar el',
+        hu_mon: expect.any(String),
         id: expect.any(String)
       }
     ];
